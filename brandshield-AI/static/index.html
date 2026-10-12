@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ShieldScan | Check a link before you click</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><span class="logo">ShieldScan</span>
+<nav aria-label="Who is scanning"><button data-mode="individual" class="on">For me</button><button data-mode="company">For my company</button></nav></header>
+<main>
+<section class="hero"><h1 id="title"></h1><p id="sub" class="lead"></p>
+<form id="f" class="bar"><input id="u" type="text" placeholder="https://example.com/login" aria-label="URL to scan" required maxlength="2048" autocomplete="off"><button id="go">Scan link</button></form>
+<details id="bulkbox" hidden><summary>Scan many links at once (up to 20, one per line)</summary><textarea id="bulk" rows="5" aria-label="URLs, one per line"></textarea><button id="bgo" type="button">Scan all links</button></details>
+<p id="msg" role="status"></p></section>
+<section id="result" hidden aria-live="polite"></section>
+<section id="dash" hidden><h2>Company risk overview</h2><div id="cards" class="cards"></div>
+<div class="two"><div><h3>Scans per day</h3><div id="daily" class="daily"></div></div><div><h3>Most common warning signs</h3><ul id="top" class="plain"></ul></div></div>
+<h3>Latest high-risk links</h3><ul id="high" class="plain"></ul></section>
+<section><h2>Scan history</h2><div class="wrap"><table><thead><tr><th>Link</th><th>Score</th><th>Risk</th><th>Scanned (UTC)</th></tr></thead><tbody id="rows"></tbody></table></div></section>
+</main>
+<footer>Scores are estimates from URL patterns and are not proof that a site is safe or malicious. Links are never opened by ShieldScan.</footer>
+<script src="app.js"></script></body></html>

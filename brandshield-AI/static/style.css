@@ -1,0 +1,32 @@
+:root{--bg:#eef2f4;--ink:#10222e;--mut:#51636f;--ac:#0b5c7a;--card:#fff;--line:#d3dde3;--low:#1f8a5b;--medium:#b87a00;--high:#c2362b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Segoe UI",system-ui,sans-serif}
+h1,h2,h3,.logo{font-family:Georgia,"Times New Roman",serif;line-height:1.2}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 5vw;border-bottom:1px solid var(--line);background:var(--card)}
+.logo{font-size:1.4rem;font-weight:700;color:var(--ac)}nav{display:flex;gap:4px;background:var(--bg);padding:4px;border-radius:10px}
+nav button{border:0;background:none;padding:8px 14px;border-radius:8px;font:inherit;cursor:pointer;color:var(--mut)}nav .on{background:var(--ac);color:#fff}
+main{max-width:980px;margin:0 auto;padding:0 5vw 40px}.hero{padding:48px 0 24px}h1{font-size:clamp(1.9rem,5vw,3rem);margin:0 0 8px;max-width:18ch}
+.lead{color:var(--mut);max-width:60ch;margin:0 0 24px}
+.bar{display:flex;gap:0;background:var(--card);border:2px solid var(--ink);border-radius:999px;padding:6px;box-shadow:0 6px 0 var(--ink)}
+.bar input{flex:1;min-width:0;border:0;background:none;padding:12px 18px;font:inherit;font-size:1.1rem;outline:none}
+button{font:inherit;cursor:pointer}.bar button,#bgo{background:var(--ac);color:#fff;border:0;border-radius:999px;padding:12px 26px;font-weight:600}
+.bar button:disabled{opacity:.6}button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible,tr:focus-visible{outline:3px solid #f2a900;outline-offset:2px}
+details{margin-top:22px}summary{cursor:pointer;color:var(--ac);font-weight:600}textarea{width:100%;margin:10px 0;padding:10px;font:inherit;border:1px solid var(--line);border-radius:8px}#bgo{border-radius:8px}
+#msg{min-height:1.5em;margin:14px 0 0}#msg.bad{color:var(--high)}#msg.ok{color:var(--low)}
+section{margin-top:28px}#result,#dash{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+.top{display:flex;gap:24px;align-items:center;flex-wrap:wrap}.top h2{margin:6px 0;word-break:break-all}
+.gauge{--p:0deg;--c:var(--low);width:120px;height:120px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--c) var(--p),var(--line) 0);position:relative}
+.gauge::before{content:"";position:absolute;inset:10px;background:var(--card);border-radius:50%}.gauge span{position:relative;font:700 2rem Georgia,serif}
+.gauge.medium{--c:var(--medium)}.gauge.high{--c:var(--high)}
+.pill{display:inline-block;padding:3px 12px;border-radius:99px;color:#fff;font-weight:600;font-size:.9rem;background:var(--low)}.pill.medium{background:var(--medium)}.pill.high{background:var(--high)}
+.muted{color:var(--mut)}.small{font-size:.85rem}.finds,.plain{list-style:none;padding:0;margin:0}
+.finds li{display:grid;gap:2px;padding:10px 0;border-top:1px solid var(--line)}.finds span{color:var(--mut)}
+.intel{display:grid;gap:2px;margin:14px 0;padding:12px;border-left:4px solid var(--ac);background:var(--bg)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-bottom:20px}.card{padding:12px;border:1px solid var(--line);border-radius:10px}.card b{display:block;font:700 1.7rem Georgia,serif}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}.daily{display:flex;align-items:flex-end;gap:8px;height:110px}
+.daily div{flex:1;background:var(--ac);border-radius:4px 4px 0 0;position:relative;min-height:4px}.daily small{position:absolute;top:-1.3em;left:0;right:0;text-align:center}
+.plain li{padding:6px 0;border-bottom:1px solid var(--line);word-break:break-all}
+.wrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:14px}table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line)}td:first-child{word-break:break-all;max-width:380px}tbody tr{cursor:pointer}tbody tr:hover{background:var(--bg)}
+footer{text-align:center;padding:20px 5vw;color:var(--mut);font-size:.85rem}
+@media(max-width:560px){.bar{flex-direction:column;border-radius:20px;gap:6px}.bar button{width:100%}}
+@media(prefers-reduced-motion:no-preference){#result{animation:in .3s}@keyframes in{from{opacity:0}to{opacity:1}}}
